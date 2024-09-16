@@ -1,0 +1,16 @@
+name: Primary
+
+on:
+    pull_request:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Build
+              run: echo "Building..." && sleep 5
+              

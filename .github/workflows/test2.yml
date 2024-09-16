@@ -1,0 +1,19 @@
+name: Test only on Certain File Change PRs
+
+on:
+    workflow_run:
+        workflows: ["Primary"]
+        types:
+            - completed
+    pull_request:
+        paths:
+            - "x.json"
+    
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Test
+              run: echo "Testing..." && sleep 5

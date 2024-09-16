@@ -1,0 +1,16 @@
+name: Test on all PRs
+
+on:
+    workflow_run:
+        workflows: ["Primary"]
+        types:
+            - completed
+    pull_request:
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Test
+              run: echo "Testing..." && sleep 5
